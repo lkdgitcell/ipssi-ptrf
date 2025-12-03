@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Message envoyé avec succès - Portfolio Loïc KOEHLY-DELGADO">
+  <meta name="author" content="Loïc KOEHLY-DELGADO">
+  <title>Message envoyé - Loïc KOEHLY-DELGADO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .thank-you-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .thank-you-card {
+      background: var(--color-card);
+      padding: 3rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-1);
+      text-align: center;
+      max-width: 600px;
+      animation: slideUp 0.6s ease;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--color-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      animation: scaleIn 0.5s ease 0.3s both;
+    }
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    .success-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: white;
+      stroke-width: 3;
+    }
+    .thank-you-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-title);
+      margin-bottom: 1rem;
+    }
+    .thank-you-message {
+      color: var(--color-text-light);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .redirect-info {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-container">
+    <div class="thank-you-card">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1 class="thank-you-title">Message envoyé avec succès !</h1>
+      <p class="thank-you-message">
+        Merci de m'avoir contacté ! J'ai bien reçu votre message et je vous répondrai dans les plus brefs délais.
+      </p>
+      <a href="index.html" class="button-cta ripple">Retour à l'accueil</a>
+      <p class="redirect-info">Redirection automatique dans <span id="countdown">5</span> secondes...</p>
+    </div>
+  </div>
+
+  <script>
+    let seconds = 5;
+    const countdownElement = document.getElementById('countdown');
+
+    const interval = setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = 'index.html#contact';
+      }
+    }, 1000);
+
+    document.querySelector('.button-cta').addEventListener('click', function(e) {
+      const circle = document.createElement('span');
+      circle.classList.add('ripple-wave');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      circle.style.width = circle.style.height = size + 'px';
+      circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      this.appendChild(circle);
+      circle.addEventListener('animationend', () => circle.remove());
+    });
+  </script>
+</body>
+</html>
