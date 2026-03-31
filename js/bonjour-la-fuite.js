@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function getStatus(emoji) {
-    if (emoji === '🟢') return { label: 'Confirmée',    cls: 'blf-status--confirmed'  };
-    if (emoji === '🟠') return { label: 'Revendiquée',  cls: 'blf-status--claimed'    };
-    return                     { label: 'Non vérifiée', cls: 'blf-status--unverified' };
+    if (emoji === '🟢') return { label: '🟢 Confirmée',    cls: 'blf-status--confirmed'  };
+    if (emoji === '🟠') return { label: '🟠 Revendiquée',  cls: 'blf-status--claimed'    };
+    return                     { label: '🔴 Non vérifiée', cls: 'blf-status--unverified' };
   }
 
   function displayLeaks(entries) {
