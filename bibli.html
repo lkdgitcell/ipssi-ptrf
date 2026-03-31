@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet Bibliothèque - Site web de gestion avec HTML/CSS/PHP et MySQL. Développement SLAM par Loïc KOEHLY-DELGADO.">
+  <meta name="author" content="Loïc KOEHLY-DELGADO">
+  <title>Projet Bibliothèque (SLAM) - Loïc KOEHLY-DELGADO</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projets.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  <div id="page-transition"></div>
+  <div id="scroll-progress-back" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <div id="scroll-progress" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<header class="header" role="banner">
+    <div class="header-inner">
+      <button id="themeToggle" class="theme-toggle" aria-label="Activer le mode sombre">
+        <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-moon"/></svg>
+      </button>
+      <button id="burger" class="burger" aria-label="Menu" aria-controls="mainNavLinks" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav class="nav-main" id="mainNav" aria-label="Navigation principale">
+        <div id="mainNavLinks" class="nav-links">
+          <a href="index.html#accueil" class="nav-link">Accueil</a>
+          <a href="index.html#apropos" class="nav-link">À propos</a>
+          <a href="index.html#parcours" class="nav-link">Parcours</a>
+          <a href="index.html#projets" class="nav-link active" aria-current="true">Projets</a>
+          <a href="index.html#competences" class="nav-link">Compétences</a>
+          <a href="index.html#interets" class="nav-link">Centres d'intérêt</a>
+          <a href="index.html#certifications" class="nav-link">Certifications</a>
+          <a href="index.html#veille" class="nav-link">Veille</a>
+          <a href="index.html#synthese" class="nav-link">Synthèse</a>
+          <a href="index.html#cv" class="nav-link">CV</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <section class="hero-project fade-in">
+      <div class="hero-content">
+        <div class="hero-breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Accueil</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="index.html#projets" class="breadcrumb-link">Projets</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Projet Bibliothèque</span>
+        </div>
+        <div class="hero-info">
+          <h1 class="hero-title">Projet Bibliothèque (SLAM)</h1>
+          <p class="hero-subtitle">Site web de gestion de bibliothèque avec interface utilisateur moderne</p>
+          <div class="project-meta">
+            <span class="project-tag">Projet Étudiant</span>
+            <span class="project-date">2024</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-logo-banner hero-logo-banner--bibli" role="img" aria-label="Logo Bibliothèque">
+            <img src="logos/bibli.svg" alt="" aria-hidden="true" width="140" height="140">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content fade-in">
+      <div class="content-container">
+        <div class="project-main">
+          <div class="content-section">
+            <h2 class="section-title">Vue d'ensemble</h2>
+            <p class="content-text">
+              Ce projet consiste au développement d'un site web complet pour exposer une bibliothèque en ligne. L'objectif était de créer un système permettant la gestion des livres. Le projet met l'accent sur les bonnes pratiques de développement et les conventions d'architecture.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Objectifs</h2>
+            <p class="content-text">
+              Maîtriser le développement web en tant que débutant, comprendre les concepts de base de données, et développer les compétences en programmation. Le projet vise également à créer une interface utilisateur responsive et accessible tout en respectant les standards web.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Réalisations</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-monitor"/></svg></div>
+                <h3 class="achievement-title">Interface Utilisateur</h3>
+                <p class="achievement-description">Création d'une interface moderne et responsive avec HTML/CSS et PHP</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-database"/></svg></div>
+                <h3 class="achievement-title">Base de Données</h3>
+                <p class="achievement-description">Conception et implémentation d'une base de données relationnelle via MySQL</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Fonctionnalités</h2>
+            <ul class="challenges-list">
+              <li>Gestion complète du catalogue de livres</li>
+              <li>Interface d'administration intuitive</li>
+              <li>Recherche dynamique et filtrage avancé</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Résultats</h2>
+            <div class="results-grid">
+              <div class="result-item">
+                <span class="result-number">10+</span>
+                <span class="result-label">Livres gérés</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Informations</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Durée</span>
+                <span class="info-value">5 mois</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Équipe</span>
+                <span class="info-value">Personnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Statut</span>
+                <span class="info-value">Terminé</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Technologies</h3>
+            <div class="tech-list">
+              <span class="tech-item"> HTML/CSS</span>
+              <span class="tech-item">PHP</span>
+              <span class="tech-item">MySQL</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Compétences</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Développement web</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Base de données</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-navigation fade-in">
+      <a href="gsb.html" class="nav-project prev">
+        <div class="nav-project-banner nav-project-banner--gsb"><img src="logos/gsb.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+        <div>
+          <small>Projet précédent</small>
+          <div>Projet GSB</div>
+        </div>
+      </a>
+      <a href="apyka.html" class="nav-project next">
+        <div>
+          <small>Projet suivant</small>
+          <div>Alternance APYKA</div>
+        </div>
+        <div class="nav-project-banner nav-project-banner--apyka"><img src="logos/apyka.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+      </a>
+    </section>
+  </main>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Accueil</a>
+        <a href="index.html#projets" class="footer-link">Projets</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/lkdgitcell" target="_blank" class="footer-icon" aria-label="GitHub">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/loic-k-41892a341/" target="_blank" class="footer-icon" aria-label="LinkedIn">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="mailto:loickoehly@gmail.com" class="footer-icon" aria-label="Email">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+      </div>
+      <p class="footer-text">© 2025. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  
+  <script src="js/icons-loader.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/enhancements.js" defer></script>
+  <script src="js/transitions.js" defer></script>
+  <script src="js/project-enhancements.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Infra perso — home network -->
+  <path d="M32 8 L56 30 L56 56 L40 56 L40 42 L24 42 L24 56 L8 56 L8 30 Z" fill="white" opacity="0.9"/>
+  <circle cx="32" cy="36" r="5" fill="#6366F1"/>
+  <circle cx="32" cy="36" r="2.5" fill="white"/>
+</svg>

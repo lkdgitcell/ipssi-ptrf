@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <!-- Cercle de marque -->
+  <circle cx="50" cy="50" r="44" fill="#3BBFC9"/>
+  <!-- Cloud (cercles superposés + corps) -->
+  <circle cx="30" cy="57" r="9"  fill="white"/>
+  <circle cx="41" cy="51" r="11" fill="white"/>
+  <circle cx="53" cy="48" r="12" fill="white"/>
+  <circle cx="65" cy="52" r="9"  fill="white"/>
+  <rect   x="21"  y="56" width="53" height="14" fill="white"/>
+  <!-- Texte APY (teal) -->
+  <text x="106" y="69"
+        font-family="Arial, Helvetica, sans-serif"
+        font-weight="800"
+        font-size="48"
+        letter-spacing="-1"
+        fill="#3BBFC9">APY</text>
+  <!-- Texte KA (navy) -->
+  <text x="222" y="69"
+        font-family="Arial, Helvetica, sans-serif"
+        font-weight="800"
+        font-size="48"
+        letter-spacing="-1"
+        fill="#1D3A5C">KA</text>
+</svg>

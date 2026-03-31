@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet TrueNAS Scale - Serveur personnel avec Jellyfin, Nextcloud, Nginx Proxy Manager et Dockge. Par Loïc KOEHLY-DELGADO.">
+  <meta name="author" content="Loïc KOEHLY-DELGADO">
+  <title>Projet TrueNAS Scale - Loïc KOEHLY-DELGADO</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projets.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  <div id="page-transition"></div>
+  <div id="scroll-progress-back" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <div id="scroll-progress" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<header class="header" role="banner">
+    <div class="header-inner">
+      <button id="themeToggle" class="theme-toggle" aria-label="Activer le mode sombre">
+        <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-moon"/></svg>
+      </button>
+      <button id="burger" class="burger" aria-label="Menu" aria-controls="mainNavLinks" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav class="nav-main" id="mainNav" aria-label="Navigation principale">
+        <div id="mainNavLinks" class="nav-links">
+          <a href="index.html#accueil" class="nav-link">Accueil</a>
+          <a href="index.html#apropos" class="nav-link">À propos</a>
+          <a href="index.html#parcours" class="nav-link">Parcours</a>
+          <a href="index.html#projets" class="nav-link active" aria-current="true">Projets</a>
+          <a href="index.html#competences" class="nav-link">Compétences</a>
+          <a href="index.html#interets" class="nav-link">Centres d'intérêt</a>
+          <a href="index.html#certifications" class="nav-link">Certifications</a>
+          <a href="index.html#veille" class="nav-link">Veille</a>
+          <a href="index.html#synthese" class="nav-link">Synthèse</a>
+          <a href="index.html#cv" class="nav-link">CV</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <section class="hero-project fade-in">
+      <div class="hero-content">
+        <div class="hero-breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Accueil</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="index.html#projets" class="breadcrumb-link">Projets</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Projet TrueNAS Scale</span>
+        </div>
+        <div class="hero-info">
+          <h1 class="hero-title">Serveur Personnel TrueNAS Scale</h1>
+          <p class="hero-subtitle">Administration de services auto-hébergés</p>
+          <div class="project-meta">
+            <span class="project-tag">Projet Personnel</span>
+            <span class="project-date">2024 - En cours</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-logo-banner hero-logo-banner--truenas" role="img" aria-label="Logo TrueNAS Scale">
+            <img src="logos/truenas.svg" alt="" aria-hidden="true" width="140" height="140">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content fade-in">
+      <div class="content-container">
+        <div class="project-main">
+          <div class="content-section">
+            <h2 class="section-title">Vue d'ensemble</h2>
+            <p class="content-text">
+              Projet personnel d'auto-hébergement avec TrueNAS Scale. Ce projet me permet de développer mes compétences en administration système, virtualisation et gestion de services containerisés. En tant que débutant, j'ai réussi à déployer et configurer plusieurs services essentiels pour créer mon propre cloud personnel et serveur multimédia.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Objectifs</h2>
+            <p class="content-text">
+              Apprendre l'administration d'un serveur Linux, comprendre les principes de la containerisation avec Docker, mettre en place des services auto-hébergés sécurisés, et développer mes compétences en gestion de reverse proxy et en configuration réseau. Ce projet me permet également de maîtriser les concepts de stockage réseau et de sauvegardes.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Services déployés</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-video"/></svg></div>
+                <h3 class="achievement-title">Jellyfin</h3>
+                <p class="achievement-description">Serveur multimédia personnel pour gérer et diffuser films, séries et musique sur tous mes appareils</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
+                <h3 class="achievement-title">Nextcloud</h3>
+                <p class="achievement-description">Solution de stockage cloud personnel avec synchronisation de fichiers, contacts et calendrier</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-refresh-cw"/></svg></div>
+                <h3 class="achievement-title">Nginx Proxy Manager</h3>
+                <p class="achievement-description">Reverse proxy avec interface web pour gérer facilement les accès et certificats SSL</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-server"/></svg></div>
+                <h3 class="achievement-title">Dockge</h3>
+                <p class="achievement-description">Interface de gestion intuitive pour administrer mes conteneurs Docker via Docker Compose</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Réalisations techniques</h2>
+            <ul class="challenges-list">
+              <li>Installation et configuration initiale de TrueNAS Scale sur serveur dédié</li>
+              <li>Configuration des pools de stockage ZFS pour optimiser la redondance et les performances</li>
+              <li>Déploiement de conteneurs Docker via l'interface TrueNAS et Docker Compose</li>
+              <li>Configuration de Nginx Proxy Manager pour l'accès sécurisé aux services (HTTPS avec Let's Encrypt)</li>
+              <li>Mise en place de Nextcloud avec configuration des permissions et partages</li>
+              <li>Installation et optimisation de Jellyfin pour le streaming multimédia local</li>
+              <li>Utilisation de Dockge pour simplifier la gestion et le monitoring des conteneurs</li>
+              <li>Configuration réseau avec redirection de ports et accès sécurisé depuis l'extérieur</li>
+              <li>Mise en place de sauvegardes automatiques des données critiques</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Compétences développées</h2>
+            <div class="gallery-grid">
+              <div class="skill-card">
+                <h4>Administration TrueNAS Scale</h4>
+                <p>Gestion de pools ZFS, datasets, permissions et configuration système</p>
+              </div>
+              <div class="skill-card">
+                <h4>Containerisation Docker</h4>
+                <p>Déploiement et gestion de services via Docker et Docker Compose</p>
+              </div>
+              <div class="skill-card">
+                <h4>Reverse Proxy</h4>
+                <p>Configuration de Nginx Proxy Manager, gestion des certificats SSL/TLS</p>
+              </div>
+              <div class="skill-card">
+                <h4>Services Cloud</h4>
+                <p>Configuration et administration de Nextcloud pour le stockage personnel</p>
+              </div>
+              <div class="skill-card">
+                <h4>Streaming Multimédia</h4>
+                <p>Déploiement et optimisation de Jellyfin pour le média center</p>
+              </div>
+              <div class="skill-card">
+                <h4>Gestion Réseau</h4>
+                <p>Configuration NAT, redirection de ports, sécurisation des accès distants</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Défis relevés</h2>
+            <ul class="challenges-list">
+              <li>Apprentissage des concepts de containerisation en tant que débutant</li>
+              <li>Compréhension du système de fichiers ZFS et de ses avantages</li>
+              <li>Configuration correcte du reverse proxy pour l'accès externe sécurisé</li>
+              <li>Résolution des problèmes de permissions entre les conteneurs et le système hôte</li>
+              <li>Optimisation des performances de streaming avec Jellyfin</li>
+              <li>Mise en place d'une architecture réseau sécurisée</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Résultats</h2>
+            <div class="results-grid">
+              <div class="result-item">
+                <span class="result-number">4</span>
+                <span class="result-label">Services opérationnels</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">100%</span>
+                <span class="result-label">Uptime des services</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">HTTPS</span>
+                <span class="result-label">Accès sécurisé</span>
+              </div>
+            </div>
+            <p class="content-text" style="margin-top: 1.5rem;">
+              Ce projet personnel m'a permis d'acquérir une expérience pratique précieuse en administration système et services auto-hébergés. J'ai réussi à déployer et maintenir un serveur fonctionnel avec plusieurs services accessibles de manière sécurisée. Nextcloud et Nginx Proxy Manager fonctionnent parfaitement et répondent à mes besoins quotidiens.
+            </p>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Informations</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Type</span>
+                <span class="info-value">Projet Personnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Niveau</span>
+                <span class="info-value">Débutant / Intermédiaire</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Statut</span>
+                <span class="info-value">En cours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Technologies</h3>
+            <div class="tech-list">
+              <span class="tech-item">TrueNAS Scale</span>
+              <span class="tech-item">Linux (Debian)</span>
+              <span class="tech-item">Docker</span>
+              <span class="tech-item">Docker Compose</span>
+              <span class="tech-item">ZFS</span>
+              <span class="tech-item">Jellyfin</span>
+              <span class="tech-item">Nextcloud</span>
+              <span class="tech-item">Nginx Proxy Manager</span>
+              <span class="tech-item">Dockge</span>
+              <span class="tech-item">Let's Encrypt</span>
+              <span class="tech-item">SSL/TLS</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Compétences</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Administration système</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Containerisation</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Réseau & Sécurité</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Auto-hébergement</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Services maîtrisés</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Nextcloud - Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Nginx Proxy Manager - Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Jellyfin - En cours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Dockge - En cours</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-navigation fade-in">
+      <a href="proxmox-backup.html" class="nav-project prev">
+        <div class="nav-project-banner nav-project-banner--proxmox"><img src="logos/proxmox.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+        <div>
+          <small>Projet précédent</small>
+          <div>Proxmox Backup Server</div>
+        </div>
+      </a>
+      <a href="infra-perso.html" class="nav-project next">
+        <div>
+          <small>Projet suivant</small>
+          <div>Infrastructure Personnelle</div>
+        </div>
+        <div class="nav-project-banner nav-project-banner--infra"><img src="logos/infra-perso.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+      </a>
+    </section>
+  </main>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Accueil</a>
+        <a href="index.html#projets" class="footer-link">Projets</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/lkdgitcell" target="_blank" class="footer-icon" aria-label="GitHub">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/loic-k-41892a341/" target="_blank" class="footer-icon" aria-label="LinkedIn">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="mailto:loickoehly@gmail.com" class="footer-icon" aria-label="Email">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+      </div>
+      <p class="footer-text">© 2025. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/icons-loader.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/enhancements.js" defer></script>
+  <script src="js/transitions.js" defer></script>
+  <script src="js/project-enhancements.js" defer></script>
+</body>
+</html>

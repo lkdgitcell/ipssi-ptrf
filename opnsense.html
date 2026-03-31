@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet OPNsense - Déploiement et configuration d'un pare-feu open-source. Par Loïc KOEHLY-DELGADO.">
+  <meta name="author" content="Loïc KOEHLY-DELGADO">
+  <title>Projet OPNsense - Loïc KOEHLY-DELGADO</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projets.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  <div id="page-transition"></div>
+  <div id="scroll-progress-back" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <div id="scroll-progress" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<header class="header" role="banner">
+    <div class="header-inner">
+      <button id="themeToggle" class="theme-toggle" aria-label="Activer le mode sombre">
+        <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-moon"/></svg>
+      </button>
+      <button id="burger" class="burger" aria-label="Menu" aria-controls="mainNavLinks" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav class="nav-main" id="mainNav" aria-label="Navigation principale">
+        <div id="mainNavLinks" class="nav-links">
+          <a href="index.html#accueil" class="nav-link">Accueil</a>
+          <a href="index.html#apropos" class="nav-link">À propos</a>
+          <a href="index.html#parcours" class="nav-link">Parcours</a>
+          <a href="index.html#projets" class="nav-link active" aria-current="true">Projets</a>
+          <a href="index.html#competences" class="nav-link">Compétences</a>
+          <a href="index.html#interets" class="nav-link">Centres d'intérêt</a>
+          <a href="index.html#certifications" class="nav-link">Certifications</a>
+          <a href="index.html#veille" class="nav-link">Veille</a>
+          <a href="index.html#synthese" class="nav-link">Synthèse</a>
+          <a href="index.html#cv" class="nav-link">CV</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <section class="hero-project fade-in">
+      <div class="hero-content">
+        <div class="hero-breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Accueil</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="index.html#projets" class="breadcrumb-link">Projets</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Projet OPNsense</span>
+        </div>
+        <div class="hero-info">
+          <h1 class="hero-title">Pare-feu OPNsense</h1>
+          <p class="hero-subtitle">Déploiement et administration d'un firewall open-source d'entreprise</p>
+          <div class="project-meta">
+            <span class="project-tag">SISR</span>
+            <span class="project-tag">En cours</span>
+            <span class="project-date">2025 – En cours</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-logo-banner hero-logo-banner--opnsense" role="img" aria-label="Logo OPNsense">
+            <img src="logos/opnsense.svg" alt="" aria-hidden="true" width="140" height="140">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content fade-in">
+      <div class="content-container">
+        <div class="project-main">
+          <div class="content-section">
+            <h2 class="section-title">Vue d'ensemble</h2>
+            <p class="content-text">
+              OPNsense est une distribution pare-feu open-source basée sur FreeBSD, dérivée de pfSense. Ce projet consiste à déployer et configurer OPNsense en remplacement d'un routeur grand public afin de mettre en place une solution de sécurité réseau professionnelle. L'objectif est d'appliquer les principes de segmentation réseau, de filtrage de trafic et de supervision appris en formation SISR.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Objectifs</h2>
+            <p class="content-text">
+              Mettre en place une infrastructure réseau sécurisée avec un pare-feu professionnel open-source, configurer des règles de filtrage précises, implémenter la segmentation par VLANs, et activer des fonctionnalités avancées de sécurité telles que l'IDS/IPS et le VPN. Ce projet vise à reproduire un environnement réseau d'entreprise réel.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Fonctionnalités déployées</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-shield"/></svg></div>
+                <h3 class="achievement-title">Filtrage de trafic</h3>
+                <p class="achievement-description">Règles de pare-feu granulaires pour contrôler les flux entrants et sortants entre les différentes interfaces réseau</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-server"/></svg></div>
+                <h3 class="achievement-title">Segmentation VLAN</h3>
+                <p class="achievement-description">Création et gestion de VLANs pour isoler les différents réseaux (LAN, DMZ, IoT, Management)</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-alert-triangle"/></svg></div>
+                <h3 class="achievement-title">IDS/IPS Suricata</h3>
+                <p class="achievement-description">Système de détection et prévention d'intrusions avec règles Emerging Threats pour identifier les menaces en temps réel</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-lock"/></svg></div>
+                <h3 class="achievement-title">VPN WireGuard</h3>
+                <p class="achievement-description">Tunnel VPN sécurisé pour l'accès distant au réseau local via le protocole WireGuard haute performance</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
+                <h3 class="achievement-title">Supervision réseau</h3>
+                <p class="achievement-description">Tableaux de bord de monitoring avec graphiques de trafic, états des interfaces et logs de sécurité en temps réel</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-globe"/></svg></div>
+                <h3 class="achievement-title">Proxy DNS</h3>
+                <p class="achievement-description">Résolution DNS locale avec blocage de publicités et de domaines malveillants via Unbound DNS</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Réalisations techniques</h2>
+            <ul class="challenges-list">
+              <li>Installation d'OPNsense sur machine dédiée avec configuration initiale des interfaces WAN/LAN</li>
+              <li>Création de VLANs (LAN principal, DMZ, IoT, Management) avec trunk 802.1Q</li>
+              <li>Rédaction de règles de pare-feu par interface avec politique de refus par défaut</li>
+              <li>Configuration du NAT (masquerading) et des redirections de ports</li>
+              <li>Déploiement de Suricata en mode IPS avec règles Emerging Threats mises à jour automatiquement</li>
+              <li>Mise en place d'un serveur VPN WireGuard avec gestion des certificats clients</li>
+              <li>Configuration d'Unbound DNS avec listes de blocage pour la sécurité DNS</li>
+              <li>Paramétrage des alertes et de la journalisation centralisée</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Compétences développées</h2>
+            <div class="gallery-grid">
+              <div class="skill-card">
+                <h4>Administration pare-feu</h4>
+                <p>Configuration de règles de filtrage, NAT, et politiques de sécurité réseau</p>
+              </div>
+              <div class="skill-card">
+                <h4>Segmentation réseau</h4>
+                <p>Conception et déploiement d'architectures VLAN pour l'isolation des flux</p>
+              </div>
+              <div class="skill-card">
+                <h4>Cybersécurité applicative</h4>
+                <p>Mise en place d'IDS/IPS et analyse des alertes de sécurité</p>
+              </div>
+              <div class="skill-card">
+                <h4>VPN & accès distant</h4>
+                <p>Déploiement et gestion de tunnels VPN WireGuard sécurisés</p>
+              </div>
+              <div class="skill-card">
+                <h4>Supervision réseau</h4>
+                <p>Monitoring des interfaces, analyse de trafic et gestion des logs</p>
+              </div>
+              <div class="skill-card">
+                <h4>FreeBSD / OPNsense</h4>
+                <p>Administration d'un système FreeBSD via interface web et CLI</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Défis relevés</h2>
+            <ul class="challenges-list">
+              <li>Compréhension de l'ordre d'évaluation des règles de pare-feu (stateful vs stateless)</li>
+              <li>Configuration correcte du trunking VLAN entre OPNsense et les switches managés</li>
+              <li>Tuning de Suricata pour réduire les faux positifs sans manquer les vraies menaces</li>
+              <li>Résolution des problèmes d'asymétrie de routage affectant les connexions VPN</li>
+              <li>Gestion des règles inter-VLANs pour autoriser uniquement les flux nécessaires</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">État d'avancement</h2>
+            <div class="results-grid">
+              <div class="result-item">
+                <span class="result-number">4</span>
+                <span class="result-label">VLANs configurés</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">IPS</span>
+                <span class="result-label">Suricata actif</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">VPN</span>
+                <span class="result-label">WireGuard opérationnel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Informations</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Type</span>
+                <span class="info-value">Projet SISR – BTS SIO</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Contexte</span>
+                <span class="info-value">Formation + Home Lab</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Statut</span>
+                <span class="info-value">En cours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Période</span>
+                <span class="info-value">2025 – En cours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Technologies</h3>
+            <div class="tech-list">
+              <span class="tech-item">OPNsense</span>
+              <span class="tech-item">FreeBSD</span>
+              <span class="tech-item">VLAN 802.1Q</span>
+              <span class="tech-item">Suricata IDS/IPS</span>
+              <span class="tech-item">WireGuard</span>
+              <span class="tech-item">Unbound DNS</span>
+              <span class="tech-item">NAT / PAT</span>
+              <span class="tech-item">pfctl</span>
+              <span class="tech-item">Emerging Threats</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Compétences SISR</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Sécurisation des accès</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Architecture réseau</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Administration firewall</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VPN & Tunneling</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">IDS/IPS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Avancement</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Pare-feu de base – Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VLANs – Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Suricata IPS – En cours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VPN WireGuard – En cours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">HAProxy – À venir</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-navigation fade-in">
+      <a href="scc.html" class="nav-project prev">
+        <div class="nav-project-banner nav-project-banner--scc"><img src="logos/scc.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+        <div>
+          <small>Projet précédent</small>
+          <div>Stage SCC France</div>
+        </div>
+      </a>
+      <a href="proxmox-backup.html" class="nav-project next">
+        <div>
+          <small>Projet suivant</small>
+          <div>Proxmox Backup Server</div>
+        </div>
+        <div class="nav-project-banner nav-project-banner--proxmox"><img src="logos/proxmox.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+      </a>
+    </section>
+  </main>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Accueil</a>
+        <a href="index.html#projets" class="footer-link">Projets</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/lkdgitcell" target="_blank" class="footer-icon" aria-label="GitHub">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/loic-k-41892a341/" target="_blank" class="footer-icon" aria-label="LinkedIn">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="mailto:loickoehly@gmail.com" class="footer-icon" aria-label="Email">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+      </div>
+      <p class="footer-text">© 2025. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/icons-loader.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/enhancements.js" defer></script>
+  <script src="js/transitions.js" defer></script>
+  <script src="js/project-enhancements.js" defer></script>
+</body>
+</html>

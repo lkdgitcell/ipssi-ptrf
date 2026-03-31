@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet Proxmox Backup Server - Solution de sauvegarde et restauration de machines virtuelles. Par Loïc KOEHLY-DELGADO.">
+  <meta name="author" content="Loïc KOEHLY-DELGADO">
+  <title>Projet Proxmox Backup Server - Loïc KOEHLY-DELGADO</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projets.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  <div id="page-transition"></div>
+  <div id="scroll-progress-back" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <div id="scroll-progress" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<header class="header" role="banner">
+    <div class="header-inner">
+      <button id="themeToggle" class="theme-toggle" aria-label="Activer le mode sombre">
+        <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-moon"/></svg>
+      </button>
+      <button id="burger" class="burger" aria-label="Menu" aria-controls="mainNavLinks" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav class="nav-main" id="mainNav" aria-label="Navigation principale">
+        <div id="mainNavLinks" class="nav-links">
+          <a href="index.html#accueil" class="nav-link">Accueil</a>
+          <a href="index.html#apropos" class="nav-link">À propos</a>
+          <a href="index.html#parcours" class="nav-link">Parcours</a>
+          <a href="index.html#projets" class="nav-link active" aria-current="true">Projets</a>
+          <a href="index.html#competences" class="nav-link">Compétences</a>
+          <a href="index.html#interets" class="nav-link">Centres d'intérêt</a>
+          <a href="index.html#certifications" class="nav-link">Certifications</a>
+          <a href="index.html#veille" class="nav-link">Veille</a>
+          <a href="index.html#synthese" class="nav-link">Synthèse</a>
+          <a href="index.html#cv" class="nav-link">CV</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <section class="hero-project fade-in">
+      <div class="hero-content">
+        <div class="hero-breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Accueil</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="index.html#projets" class="breadcrumb-link">Projets</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Proxmox Backup Server</span>
+        </div>
+        <div class="hero-info">
+          <h1 class="hero-title">Proxmox Backup Server</h1>
+          <p class="hero-subtitle">Solution de sauvegarde incrémentielle et restauration de VMs</p>
+          <div class="project-meta">
+            <span class="project-tag">SISR</span>
+            <span class="project-tag">En cours</span>
+            <span class="project-date">2025 – En cours</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-logo-banner hero-logo-banner--proxmox" role="img" aria-label="Logo Proxmox Backup Server">
+            <img src="logos/proxmox.svg" alt="" aria-hidden="true" width="140" height="140">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content fade-in">
+      <div class="content-container">
+        <div class="project-main">
+          <div class="content-section">
+            <h2 class="section-title">Vue d'ensemble</h2>
+            <p class="content-text">
+              Proxmox Backup Server (PBS) est une solution de sauvegarde open-source spécialement conçue pour les environnements virtualisés Proxmox VE. Ce projet consiste à déployer PBS pour assurer la protection des machines virtuelles et des conteneurs LXC, en mettant en place une stratégie de sauvegarde automatisée avec déduplication et chiffrement des données.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Objectifs</h2>
+            <p class="content-text">
+              Mettre en place une solution de sauvegarde robuste et automatisée pour protéger les données des machines virtuelles, réduire l'espace de stockage utilisé grâce à la déduplication, garantir la confidentialité des sauvegardes par chiffrement, et établir des procédures de restauration testées et documentées respectant les RTO/RPO définis.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Fonctionnalités déployées</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-database"/></svg></div>
+                <h3 class="achievement-title">Sauvegardes incrémentielles</h3>
+                <p class="achievement-description">Sauvegarde uniquement des blocs modifiés grâce à la technologie Proxmox Backup Protocol, réduisant drastiquement les durées et l'espace utilisé</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-lock"/></svg></div>
+                <h3 class="achievement-title">Chiffrement AES-256</h3>
+                <p class="achievement-description">Chiffrement côté client des sauvegardes avant transmission, garantissant la confidentialité des données même en cas de compromission du serveur</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-refresh-cw"/></svg></div>
+                <h3 class="achievement-title">Déduplication</h3>
+                <p class="achievement-description">Élimination des données dupliquées entre les sauvegardes pour optimiser l'utilisation de l'espace disque</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
+                <h3 class="achievement-title">Planification automatique</h3>
+                <p class="achievement-description">Jobs de sauvegarde planifiés avec politiques de rétention configurables (quotidienne, hebdomadaire, mensuelle)</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
+                <h3 class="achievement-title">Restauration granulaire</h3>
+                <p class="achievement-description">Restauration complète de VM ou de fichiers individuels depuis n'importe quel point de restauration avec verification d'intégrité</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-bell"/></svg></div>
+                <h3 class="achievement-title">Monitoring & alertes</h3>
+                <p class="achievement-description">Tableau de bord centralisé avec notifications par email en cas d'échec de sauvegarde et rapports d'état réguliers</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Réalisations techniques</h2>
+            <ul class="challenges-list">
+              <li>Installation et configuration de Proxmox Backup Server sur machine dédiée</li>
+              <li>Création et configuration des datastores avec politiques de rétention adaptées</li>
+              <li>Intégration de PBS dans l'interface Proxmox VE via ajout de stockage distant</li>
+              <li>Configuration des jobs de sauvegarde automatiques par groupes de VMs</li>
+              <li>Mise en place du chiffrement AES-256 côté client avec gestion des clés</li>
+              <li>Configuration du pruning automatique selon les règles de rétention (7j / 4s / 12m)</li>
+              <li>Tests réguliers de restauration complète et partielle des VMs</li>
+              <li>Documentation des procédures de reprise après sinistre (DRP)</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Compétences développées</h2>
+            <div class="gallery-grid">
+              <div class="skill-card">
+                <h4>Administration PBS</h4>
+                <p>Gestion des datastores, jobs de sauvegarde, politiques de rétention et surveillance</p>
+              </div>
+              <div class="skill-card">
+                <h4>Virtualisation Proxmox VE</h4>
+                <p>Intégration PBS dans un environnement Proxmox, gestion des VMs et conteneurs LXC</p>
+              </div>
+              <div class="skill-card">
+                <h4>Sécurité des données</h4>
+                <p>Chiffrement, gestion des clés et protection des données au repos et en transit</p>
+              </div>
+              <div class="skill-card">
+                <h4>Plan de reprise d'activité</h4>
+                <p>Définition des RTO/RPO, documentation et tests des procédures de restauration</p>
+              </div>
+              <div class="skill-card">
+                <h4>Optimisation stockage</h4>
+                <p>Déduplication, compression et gestion efficace de l'espace disque</p>
+              </div>
+              <div class="skill-card">
+                <h4>Automatisation</h4>
+                <p>Planification des sauvegardes, pruning automatique et notifications</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Défis relevés</h2>
+            <ul class="challenges-list">
+              <li>Dimensionnement correct de l'espace de stockage en tenant compte de la déduplication</li>
+              <li>Gestion et sécurisation des clés de chiffrement pour éviter toute perte irréversible</li>
+              <li>Configuration des règles de rétention pour équilibrer protection et espace disponible</li>
+              <li>Optimisation des fenêtres de sauvegarde pour minimiser l'impact sur les VMs en production</li>
+              <li>Validation régulière de l'intégrité des sauvegardes par tests de restauration</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">État d'avancement</h2>
+            <div class="results-grid">
+              <div class="result-item">
+                <span class="result-number">AES-256</span>
+                <span class="result-label">Chiffrement actif</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">Auto</span>
+                <span class="result-label">Planification active</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">DRP</span>
+                <span class="result-label">Procédures documentées</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Informations</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Type</span>
+                <span class="info-value">Projet SISR – BTS SIO</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Contexte</span>
+                <span class="info-value">Formation + Home Lab</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Statut</span>
+                <span class="info-value">En cours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Période</span>
+                <span class="info-value">2025 – En cours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Technologies</h3>
+            <div class="tech-list">
+              <span class="tech-item">Proxmox BS</span>
+              <span class="tech-item">Proxmox VE</span>
+              <span class="tech-item">Linux (Debian)</span>
+              <span class="tech-item">ZFS</span>
+              <span class="tech-item">AES-256</span>
+              <span class="tech-item">PBS Protocol</span>
+              <span class="tech-item">LXC</span>
+              <span class="tech-item">KVM</span>
+              <span class="tech-item">SMTP</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Compétences SISR</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Sauvegarde & restauration</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Virtualisation</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Sécurité des données</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Plan de reprise d'activité</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Administration Linux</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Avancement</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Installation PBS – Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Intégration Proxmox VE – Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Chiffrement – Opérationnel</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Planification – En cours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Documentation DRP – En cours</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-navigation fade-in">
+      <a href="opnsense.html" class="nav-project prev">
+        <div class="nav-project-banner nav-project-banner--opnsense"><img src="logos/opnsense.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+        <div>
+          <small>Projet précédent</small>
+          <div>Pare-feu OPNsense</div>
+        </div>
+      </a>
+      <a href="truenas.html" class="nav-project next">
+        <div>
+          <small>Projet suivant</small>
+          <div>Serveur TrueNAS Scale</div>
+        </div>
+        <div class="nav-project-banner nav-project-banner--truenas"><img src="logos/truenas.svg" alt="" aria-hidden="true" width="38" height="38"></div>
+      </a>
+    </section>
+  </main>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Accueil</a>
+        <a href="index.html#projets" class="footer-link">Projets</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/lkdgitcell" target="_blank" class="footer-icon" aria-label="GitHub">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/loic-k-41892a341/" target="_blank" class="footer-icon" aria-label="LinkedIn">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="mailto:loickoehly@gmail.com" class="footer-icon" aria-label="Email">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+      </div>
+      <p class="footer-text">© 2025. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/icons-loader.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/enhancements.js" defer></script>
+  <script src="js/transitions.js" defer></script>
+  <script src="js/project-enhancements.js" defer></script>
+</body>
+</html>
