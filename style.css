@@ -2288,6 +2288,13 @@
       flex: none;
       white-space: nowrap;
     }
+
+    .doc-actions {
+      flex: none;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
   }
 
   /* ===== BLOCK: CONTACT ===== */
@@ -2726,6 +2733,11 @@
       .button-cta {
         align-self: stretch;
         justify-content: center;
+      }
+
+      .doc-actions {
+        width: 100%;
+        flex-direction: column;
       }
     }
   }
