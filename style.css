@@ -2292,8 +2292,9 @@
     .doc-actions {
       flex: none;
       display: flex;
+      flex-direction: column;
       gap: 0.5rem;
-      flex-wrap: wrap;
+      align-items: stretch;
     }
   }
 
