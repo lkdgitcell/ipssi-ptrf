@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projet Proxmox Backup Server - Solution de sauvegarde et restauration de machines virtuelles. Par Loïc KOEHLY-DELGADO.">
+  <meta name="description" content="Proxmox Backup Server — Réalisation professionnelle BTS SIO SISR E6 pour la Maison des Ligues de Lorraine (M2L). Par Loïc KOEHLY-DELGADO.">
   <meta name="author" content="Loïc KOEHLY-DELGADO">
-  <title>Projet Proxmox Backup Server - Loïc KOEHLY-DELGADO</title>
+  <title>Proxmox Backup Server — Loïc KOEHLY-DELGADO</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,9 @@
   <div id="scroll-progress" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 <header class="header" role="banner">
     <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
+        <span class="logo-text">LKD</span>
+      </a>
       <button id="themeToggle" class="theme-toggle" aria-label="Activer le mode sombre">
         <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-moon"/></svg>
       </button>
@@ -59,11 +62,12 @@
         </div>
         <div class="hero-info">
           <h1 class="hero-title">Proxmox Backup Server</h1>
-          <p class="hero-subtitle">Solution de sauvegarde incrémentielle et restauration de VMs</p>
+          <p class="hero-subtitle">Solution de sauvegarde centralisée pour la Maison des Ligues de Lorraine (M2L)</p>
           <div class="project-meta">
-            <span class="project-tag">SISR</span>
-            <span class="project-tag">En cours</span>
-            <span class="project-date">2025 – En cours</span>
+            <span class="project-tag">BTS SIO SISR — E6</span>
+            <span class="project-tag">M2L</span>
+            <span class="project-tag">En équipe</span>
+            <span class="project-date">01/09/2025 - 31/08/2026</span>
           </div>
         </div>
         <div class="hero-image">
@@ -78,17 +82,36 @@
       <div class="content-container">
         <div class="project-main">
           <div class="content-section">
-            <h2 class="section-title">Vue d'ensemble</h2>
+            <h2 class="section-title">Contexte</h2>
             <p class="content-text">
-              Proxmox Backup Server (PBS) est une solution de sauvegarde open-source spécialement conçue pour les environnements virtualisés Proxmox VE. Ce projet consiste à déployer PBS pour assurer la protection des machines virtuelles et des conteneurs LXC, en mettant en place une stratégie de sauvegarde automatisée avec déduplication et chiffrement des données.
+              La Maison des Ligues de Lorraine (M2L), établissement du Conseil Régional de Lorraine, fournit des espaces et services aux ligues sportives régionales. Dans le cadre de la modernisation de son infrastructure, la M2L souhaite mettre en place un plan de sauvegarde et de restauration de ses machines virtuelles via Proxmox Backup Server, avec réplication vers un NAS Synology pour fiabiliser la conservation des données.
+            </p>
+            <p class="content-text">
+              Ce projet est réalisé dans le cadre de l'épreuve E6 du BTS SIO option SISR — réalisation professionnelle — à l'IPSSI Marne-La-Vallée, en équipe.
             </p>
           </div>
 
           <div class="content-section">
             <h2 class="section-title">Objectifs</h2>
+            <ul class="challenges-list">
+              <li>Solution de backup automatisée et centralisée fonctionnelle</li>
+              <li>Sauvegardes automatiques quotidiennes configurées pour toutes les VMs</li>
+              <li>Réplication des archives PBS vers un stockage distant (NAS Synology)</li>
+              <li>Procédures de restauration testées et documentées</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Architecture</h2>
             <p class="content-text">
-              Mettre en place une solution de sauvegarde robuste et automatisée pour protéger les données des machines virtuelles, réduire l'espace de stockage utilisé grâce à la déduplication, garantir la confidentialité des sauvegardes par chiffrement, et établir des procédures de restauration testées et documentées respectant les RTO/RPO définis.
+              L'infrastructure repose sur trois éléments interconnectés via un switch L3 cœur de réseau (10.74.2.216). Le serveur Proxmox VE héberge les machines virtuelles de production. Le serveur PBS, installé sur une machine dédiée, reçoit les sauvegardes quotidiennes. Un NAS Synology DS920+ assure la réplication distante des archives pour répondre à la règle 3-2-1 de sauvegarde.
             </p>
+            <ul class="challenges-list">
+              <li><strong>Proxmox VE :</strong> 10.74.0.210:8006 — hyperviseur hébergeant les VMs (10.74.0.101 à 103)</li>
+              <li><strong>Proxmox Backup Server :</strong> 10.74.0.231:8007 — datastore local, sauvegardes incrémentielles + vérification d'intégrité</li>
+              <li><strong>NAS Synology DS920+ :</strong> 10.74.0.176:5000 — pool de stockage, archives PBS et snapshots quotidiens</li>
+              <li><strong>Switch L3 cœur :</strong> 10.74.2.216 — interconnexion des trois éléments</li>
+            </ul>
           </div>
 
           <div class="content-section">
@@ -97,32 +120,32 @@
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-database"/></svg></div>
                 <h3 class="achievement-title">Sauvegardes incrémentielles</h3>
-                <p class="achievement-description">Sauvegarde uniquement des blocs modifiés grâce à la technologie Proxmox Backup Protocol, réduisant drastiquement les durées et l'espace utilisé</p>
+                <p class="achievement-description">Mode snapshot quotidien sur toutes les VMs avec déduplication, planifié à 22h via les jobs PBS</p>
               </div>
               <div class="achievement-card">
-                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-lock"/></svg></div>
-                <h3 class="achievement-title">Chiffrement AES-256</h3>
-                <p class="achievement-description">Chiffrement côté client des sauvegardes avant transmission, garantissant la confidentialité des données même en cas de compromission du serveur</p>
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-server"/></svg></div>
+                <h3 class="achievement-title">Intégration Proxmox VE</h3>
+                <p class="achievement-description">Ajout du serveur PBS comme storage de type PBS dans Proxmox VE pour pousser les sauvegardes automatiquement</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-refresh-cw"/></svg></div>
-                <h3 class="achievement-title">Déduplication</h3>
-                <p class="achievement-description">Élimination des données dupliquées entre les sauvegardes pour optimiser l'utilisation de l'espace disque</p>
+                <h3 class="achievement-title">Réplication vers NAS</h3>
+                <p class="achievement-description">Synchronisation des archives PBS et snapshots quotidiens vers le NAS Synology DS920+ pour conservation distante</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
-                <h3 class="achievement-title">Planification automatique</h3>
-                <p class="achievement-description">Jobs de sauvegarde planifiés avec politiques de rétention configurables (quotidienne, hebdomadaire, mensuelle)</p>
+                <h3 class="achievement-title">Politique de rétention</h3>
+                <p class="achievement-description">Configuration des règles de conservation pour équilibrer la profondeur historique et l'espace disque utilisé</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-shield"/></svg></div>
+                <h3 class="achievement-title">Vérification d'intégrité</h3>
+                <p class="achievement-description">Contrôle régulier des sauvegardes côté PBS pour détecter toute corruption avant un besoin de restauration</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-file-text"/></svg></div>
-                <h3 class="achievement-title">Restauration granulaire</h3>
-                <p class="achievement-description">Restauration complète de VM ou de fichiers individuels depuis n'importe quel point de restauration avec verification d'intégrité</p>
-              </div>
-              <div class="achievement-card">
-                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-bell"/></svg></div>
-                <h3 class="achievement-title">Monitoring & alertes</h3>
-                <p class="achievement-description">Tableau de bord centralisé avec notifications par email en cas d'échec de sauvegarde et rapports d'état réguliers</p>
+                <h3 class="achievement-title">Restauration testée</h3>
+                <p class="achievement-description">Procédure de restauration complète d'une VM depuis PBS vers Proxmox VE et depuis la copie NAS, validée par tests</p>
               </div>
             </div>
           </div>
@@ -130,14 +153,24 @@
           <div class="content-section">
             <h2 class="section-title">Réalisations techniques</h2>
             <ul class="challenges-list">
-              <li>Installation et configuration de Proxmox Backup Server sur machine dédiée</li>
-              <li>Création et configuration des datastores avec politiques de rétention adaptées</li>
-              <li>Intégration de PBS dans l'interface Proxmox VE via ajout de stockage distant</li>
-              <li>Configuration des jobs de sauvegarde automatiques par groupes de VMs</li>
-              <li>Mise en place du chiffrement AES-256 côté client avec gestion des clés</li>
-              <li>Configuration du pruning automatique selon les règles de rétention (7j / 4s / 12m)</li>
-              <li>Tests réguliers de restauration complète et partielle des VMs</li>
-              <li>Documentation des procédures de reprise après sinistre (DRP)</li>
+              <li>Installation de Proxmox Backup Server 4.1.0 sur serveur dédié (10.74.0.231)</li>
+              <li>Configuration du datastore local pour le stockage des sauvegardes</li>
+              <li>Accès à l'interface d'administration via https://10.74.0.231:8007</li>
+              <li>Ajout du serveur PBS comme storage de type PBS dans Proxmox VE 9.1 (10.74.0.210)</li>
+              <li>Planification de sauvegardes automatiques quotidiennes en mode snapshot pour toutes les VMs</li>
+              <li>Configuration de la politique de rétention sur le datastore PBS</li>
+              <li>Mise en place de la synchronisation des archives PBS vers le NAS Synology DS920+ (10.74.0.176)</li>
+              <li>Documentation du schéma d'architecture et des procédures de restauration</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Tests de validation</h2>
+            <ul class="challenges-list">
+              <li>Vérification de l'exécution des sauvegardes automatiques quotidiennes</li>
+              <li>Test de restauration complète d'une VM depuis PBS vers Proxmox VE</li>
+              <li>Test de restauration depuis le NAS Synology (chaîne complète validée)</li>
+              <li>Vérification de l'intégrité des archives sur le datastore PBS</li>
             </ul>
           </div>
 
@@ -146,39 +179,37 @@
             <div class="gallery-grid">
               <div class="skill-card">
                 <h4>Administration PBS</h4>
-                <p>Gestion des datastores, jobs de sauvegarde, politiques de rétention et surveillance</p>
+                <p>Gestion des datastores, jobs de sauvegarde, politiques de rétention et surveillance des tâches</p>
               </div>
               <div class="skill-card">
                 <h4>Virtualisation Proxmox VE</h4>
-                <p>Intégration PBS dans un environnement Proxmox, gestion des VMs et conteneurs LXC</p>
+                <p>Intégration de PBS dans l'environnement Proxmox VE, gestion des VMs et stockages distants</p>
               </div>
               <div class="skill-card">
-                <h4>Sécurité des données</h4>
-                <p>Chiffrement, gestion des clés et protection des données au repos et en transit</p>
+                <h4>Stockage NAS Synology</h4>
+                <p>Configuration du DS920+ comme cible de réplication, gestion des partages et droits d'accès</p>
               </div>
               <div class="skill-card">
-                <h4>Plan de reprise d'activité</h4>
-                <p>Définition des RTO/RPO, documentation et tests des procédures de restauration</p>
+                <h4>Sauvegarde 3-2-1</h4>
+                <p>Mise en pratique de la règle 3-2-1 : production + PBS local + copie NAS distante</p>
               </div>
               <div class="skill-card">
-                <h4>Optimisation stockage</h4>
-                <p>Déduplication, compression et gestion efficace de l'espace disque</p>
+                <h4>Procédures de restauration</h4>
+                <p>Définition, exécution et documentation des procédures de restauration VM et de reprise après sinistre</p>
               </div>
               <div class="skill-card">
-                <h4>Automatisation</h4>
-                <p>Planification des sauvegardes, pruning automatique et notifications</p>
+                <h4>Travail en équipe</h4>
+                <p>Coordination de la réalisation à plusieurs avec répartition des tâches et documentation partagée</p>
               </div>
             </div>
           </div>
 
           <div class="content-section">
-            <h2 class="section-title">Défis relevés</h2>
+            <h2 class="section-title">Compétences BTS travaillées</h2>
             <ul class="challenges-list">
-              <li>Dimensionnement correct de l'espace de stockage en tenant compte de la déduplication</li>
-              <li>Gestion et sécurisation des clés de chiffrement pour éviter toute perte irréversible</li>
-              <li>Configuration des règles de rétention pour équilibrer protection et espace disponible</li>
-              <li>Optimisation des fenêtres de sauvegarde pour minimiser l'impact sur les VMs en production</li>
-              <li>Validation régulière de l'intégrité des sauvegardes par tests de restauration</li>
+              <li>Concevoir une solution d'infrastructure réseau</li>
+              <li>Installer, tester et déployer une solution d'infrastructure réseau</li>
+              <li>Exploiter, dépanner et superviser une solution d'infrastructure réseau</li>
             </ul>
           </div>
 
@@ -186,16 +217,16 @@
             <h2 class="section-title">État d'avancement</h2>
             <div class="results-grid">
               <div class="result-item">
-                <span class="result-number">AES-256</span>
-                <span class="result-label">Chiffrement actif</span>
+                <span class="result-number">22h</span>
+                <span class="result-label">Backup quotidien planifié</span>
               </div>
               <div class="result-item">
-                <span class="result-number">Auto</span>
-                <span class="result-label">Planification active</span>
+                <span class="result-number">3-2-1</span>
+                <span class="result-label">Règle appliquée</span>
               </div>
               <div class="result-item">
-                <span class="result-number">DRP</span>
-                <span class="result-label">Procédures documentées</span>
+                <span class="result-number">VM</span>
+                <span class="result-label">Restauration testée</span>
               </div>
             </div>
           </div>
@@ -207,19 +238,27 @@
             <div class="sidebar-info">
               <div class="info-item">
                 <span class="info-label">Type</span>
-                <span class="info-value">Projet SISR – BTS SIO</span>
+                <span class="info-value">Réalisation pro E6 — BTS SIO SISR</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Contexte</span>
-                <span class="info-value">Formation + Home Lab</span>
+                <span class="info-label">Organisation</span>
+                <span class="info-value">M2L (cadre référentiel BTS)</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Lieu</span>
+                <span class="info-value">IPSSI Marne-La-Vallée</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Modalité</span>
+                <span class="info-value">En équipe</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Période</span>
+                <span class="info-value">01/09/2025 - 31/08/2026</span>
               </div>
               <div class="info-item">
                 <span class="info-label">Statut</span>
                 <span class="info-value">En cours</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Période</span>
-                <span class="info-value">2025 – En cours</span>
               </div>
             </div>
           </div>
@@ -227,15 +266,31 @@
           <div class="sidebar-section">
             <h3 class="sidebar-title">Technologies</h3>
             <div class="tech-list">
-              <span class="tech-item">Proxmox BS</span>
-              <span class="tech-item">Proxmox VE</span>
-              <span class="tech-item">Linux (Debian)</span>
-              <span class="tech-item">ZFS</span>
-              <span class="tech-item">AES-256</span>
-              <span class="tech-item">PBS Protocol</span>
-              <span class="tech-item">LXC</span>
-              <span class="tech-item">KVM</span>
-              <span class="tech-item">SMTP</span>
+              <span class="tech-item">Proxmox PBS 4.1.0</span>
+              <span class="tech-item">Proxmox VE 9.1</span>
+              <span class="tech-item">NAS Synology DS920+</span>
+              <span class="tech-item">Linux</span>
+              <span class="tech-item">Datastore PBS</span>
+              <span class="tech-item">Snapshots</span>
+              <span class="tech-item">Déduplication</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Adressage</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">Proxmox VE — 10.74.0.210:8006</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">PBS — 10.74.0.231:8007</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">NAS Synology — 10.74.0.176:5000</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">SW L3 — 10.74.2.216</span>
+              </div>
             </div>
           </div>
 
@@ -243,40 +298,16 @@
             <h3 class="sidebar-title">Compétences SISR</h3>
             <div class="sidebar-info">
               <div class="info-item">
-                <span class="info-label">Sauvegarde & restauration</span>
+                <span class="info-label">Sauvegarde et restauration</span>
               </div>
               <div class="info-item">
                 <span class="info-label">Virtualisation</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Sécurité des données</span>
+                <span class="info-label">Continuité de service</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Plan de reprise d'activité</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Administration Linux</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="sidebar-section">
-            <h3 class="sidebar-title">Avancement</h3>
-            <div class="sidebar-info">
-              <div class="info-item">
-                <span class="info-label">Installation PBS – Opérationnel</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Intégration Proxmox VE – Opérationnel</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Chiffrement – Opérationnel</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Planification – En cours</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Documentation DRP – En cours</span>
+                <span class="info-label">Documentation technique</span>
               </div>
             </div>
           </div>
@@ -322,7 +353,7 @@
           <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
         </a>
       </div>
-      <p class="footer-text">© 2025–2026. Tous droits réservés.</p>
+      <p class="footer-text">© 2025 - 2026. Tous droits réservés.</p>
     </div>
   </footer>
 
