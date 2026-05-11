@@ -122,32 +122,32 @@
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-server"/></svg></div>
                 <h3 class="achievement-title">Routage inter-VLAN</h3>
-                <p class="achievement-description">Sous-interfaces VLANs côté LAN (110/120/130/140/150) avec passerelles dédiées et routage géré par OPNsense</p>
+                <p class="achievement-description">5 sous-interfaces VLANs LAN avec passerelles dédiées, routage centralisé par OPNsense</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-shield"/></svg></div>
                 <h3 class="achievement-title">Filtrage par règles</h3>
-                <p class="achievement-description">Politique pare-feu par VLAN : Admin, Utilisateurs et WiFi autorisés au WAN, Invité isolé du LAN, DMZ vers LAN bloqué</p>
+                <p class="achievement-description">Admin/Utilisateurs/WiFi → WAN autorisé, Invité isolé du LAN, DMZ → LAN bloqué</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-lock"/></svg></div>
                 <h3 class="achievement-title">Isolation VLAN invité</h3>
-                <p class="achievement-description">VLAN 140 cantonné à l'accès Internet — aucun flux autorisé vers le LAN interne, vérifié par tests ping bloqués</p>
+                <p class="achievement-description">VLAN 140 cantonné à Internet, aucun flux vers LAN interne (ping bloqué)</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-globe"/></svg></div>
                 <h3 class="achievement-title">NAT sortant</h3>
-                <p class="achievement-description">Masquerading appliqué à tous les VLANs internes pour partager l'accès Internet du WAN obtenu via DHCP école</p>
+                <p class="achievement-description">Masquerading sur tous les VLANs internes, accès Internet partagé via DHCP école</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
                 <h3 class="achievement-title">Redirection de port DMZ</h3>
-                <p class="achievement-description">Port forwarding 80/443 du WAN vers le serveur web hébergé en DMZ (10.20.120.10) pour exposer le service à l'extérieur</p>
+                <p class="achievement-description">Port forwarding 80/443 WAN → serveur web DMZ (10.20.120.10)</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-monitor"/></svg></div>
                 <h3 class="achievement-title">Interface d'administration</h3>
-                <p class="achievement-description">Accès web sécurisé depuis le VLAN Admin (http://10.20.110.1) — gestion centralisée du pare-feu via navigateur</p>
+                <p class="achievement-description">Accès web depuis VLAN Admin (10.20.110.1) — gestion centralisée navigateur</p>
               </div>
             </div>
           </div>

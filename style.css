@@ -924,6 +924,7 @@
       color: var(--muted);
       line-height: var(--line-height-relaxed);
       font-size: var(--text-base);
+      max-width: 70ch;
 
       p { margin-bottom: 1.1rem; }
       p:last-child { margin-bottom: 0; }
@@ -959,6 +960,16 @@
       color: var(--accent);
       letter-spacing: -0.04em;
       line-height: 1;
+    }
+
+    .stats-context {
+      grid-column: 1 / -1;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.75rem;
+      letter-spacing: 0.02em;
     }
 
     .stat-label {
@@ -1639,6 +1650,28 @@
   }
 
   /* ===== BLOCK: VEILLE TECHNOLOGIQUE ===== */
+  /* ===== READABILITY: max-width prose + sidebar checkmarks + mobile meta ===== */
+  .content-text { max-width: 70ch; }
+  .contact-intro { max-width: 70ch; margin-left: auto; margin-right: auto; }
+
+  .sidebar-section .info-item:not(:has(.info-value)) .info-label {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4em;
+  }
+  .sidebar-section .info-item:not(:has(.info-value)) .info-label::before {
+    content: "\2713";
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+
+  @media (max-width: 540px) {
+    .project-meta { gap: 0.4rem; }
+    .project-tag { font-size: 0.68rem; padding: 0.2rem 0.55rem; }
+    .project-date { flex-basis: 100%; font-size: 0.75rem; margin-top: 0.25rem; }
+  }
+
   .veille-intro {
     color: var(--muted);
     font-size: var(--text-base);
