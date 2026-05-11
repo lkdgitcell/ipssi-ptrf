@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projet OPNsense - Déploiement et configuration d'un pare-feu open-source. Par Loïc KOEHLY-DELGADO.">
+  <meta name="description" content="Pare-feu OPNsense — Réalisation professionnelle BTS SIO SISR E6 pour la Maison des Ligues de Lorraine (M2L). Par Loïc KOEHLY-DELGADO.">
   <meta name="author" content="Loïc KOEHLY-DELGADO">
-  <title>Projet OPNsense - Loïc KOEHLY-DELGADO</title>
+  <title>Pare-feu OPNsense — Loïc KOEHLY-DELGADO</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,9 @@
   <div id="scroll-progress" role="progressbar" aria-label="Progression du défilement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 <header class="header" role="banner">
     <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
+        <span class="logo-text">LKD</span>
+      </a>
       <button id="themeToggle" class="theme-toggle" aria-label="Activer le mode sombre">
         <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-moon"/></svg>
       </button>
@@ -55,15 +58,16 @@
           <span class="breadcrumb-separator">/</span>
           <a href="index.html#projets" class="breadcrumb-link">Projets</a>
           <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Projet OPNsense</span>
+          <span class="breadcrumb-current">Pare-feu OPNsense</span>
         </div>
         <div class="hero-info">
           <h1 class="hero-title">Pare-feu OPNsense</h1>
-          <p class="hero-subtitle">Déploiement et administration d'un firewall open-source d'entreprise</p>
+          <p class="hero-subtitle">Sécurisation et filtrage du réseau de la Maison des Ligues de Lorraine (M2L)</p>
           <div class="project-meta">
-            <span class="project-tag">SISR</span>
-            <span class="project-tag">En cours</span>
-            <span class="project-date">2025 – En cours</span>
+            <span class="project-tag">BTS SIO SISR — E6</span>
+            <span class="project-tag">M2L</span>
+            <span class="project-tag">Seul</span>
+            <span class="project-date">01/09/2025 - 31/08/2026</span>
           </div>
         </div>
         <div class="hero-image">
@@ -78,51 +82,72 @@
       <div class="content-container">
         <div class="project-main">
           <div class="content-section">
-            <h2 class="section-title">Vue d'ensemble</h2>
+            <h2 class="section-title">Contexte</h2>
             <p class="content-text">
-              OPNsense est une distribution pare-feu open-source basée sur FreeBSD, dérivée de pfSense. Ce projet consiste à déployer et configurer OPNsense en remplacement d'un routeur grand public afin de mettre en place une solution de sécurité réseau professionnelle. L'objectif est d'appliquer les principes de segmentation réseau, de filtrage de trafic et de supervision appris en formation SISR.
+              La Maison des Ligues de Lorraine (M2L) est un établissement du Conseil Régional de Lorraine qui fournit des espaces et services aux différentes ligues sportives régionales hébergées. Dans le cadre de la modernisation de son infrastructure réseau, la M2L souhaite mettre en place un pare-feu centralisé capable de filtrer le trafic entre les différents VLANs, de sécuriser les accès Internet et d'isoler les zones sensibles (DMZ, invités) du réseau interne.
+            </p>
+            <p class="content-text">
+              Ce projet est réalisé dans le cadre de l'épreuve E6 du BTS SIO option SISR — réalisation professionnelle — à l'IPSSI Marne-La-Vallée.
             </p>
           </div>
 
           <div class="content-section">
             <h2 class="section-title">Objectifs</h2>
+            <ul class="challenges-list">
+              <li>VM OPNsense opérationnelle, interfaces WAN et LAN configurées</li>
+              <li>Routage inter-VLAN fonctionnel (VLANs 110 / 120 / 130 / 140 / 150)</li>
+              <li>Accès Internet fonctionnel depuis chaque VLAN</li>
+              <li>VLAN 140 invité isolé du réseau interne</li>
+              <li>NAT sortant opérationnel pour tous les VLANs</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Architecture réseau</h2>
             <p class="content-text">
-              Mettre en place une infrastructure réseau sécurisée avec un pare-feu professionnel open-source, configurer des règles de filtrage précises, implémenter la segmentation par VLANs, et activer des fonctionnalités avancées de sécurité telles que l'IDS/IPS et le VPN. Ce projet vise à reproduire un environnement réseau d'entreprise réel.
+              Le pare-feu OPNsense est déployé en VM sur un serveur Proxmox VE, avec deux interfaces : WAN (obtenue par DHCP sur le réseau école) et LAN trunk portant les sous-interfaces VLANs. Un switch L3 Cisco Catalyst assure le trunking 802.1Q vers OPNsense, et un switch L2 distribue les VLANs sur les ports d'accès. OPNsense centralise le routage inter-VLAN entre les cinq zones.
             </p>
+            <ul class="challenges-list">
+              <li><strong>VLAN 110 — Admin :</strong> 10.20.110.0/24 — administration des équipements, passerelle 10.20.110.1</li>
+              <li><strong>VLAN 120 — DMZ :</strong> 10.20.120.0/24 — serveur web exposé (10.20.120.10), passerelle 10.20.120.1</li>
+              <li><strong>VLAN 130 — WiFi :</strong> 10.20.130.0/24 — clients sans-fil internes, passerelle 10.20.130.1</li>
+              <li><strong>VLAN 140 — Invité :</strong> 10.20.140.0/24 — DHCP de 10.20.140.100 à 10.20.140.200, passerelle 10.20.140.1</li>
+              <li><strong>VLAN 150 — Utilisateurs :</strong> 10.20.150.0/24 — postes de travail, passerelle 10.20.150.1</li>
+            </ul>
           </div>
 
           <div class="content-section">
             <h2 class="section-title">Fonctionnalités déployées</h2>
             <div class="achievements-grid">
               <div class="achievement-card">
-                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-shield"/></svg></div>
-                <h3 class="achievement-title">Filtrage de trafic</h3>
-                <p class="achievement-description">Règles de pare-feu granulaires pour contrôler les flux entrants et sortants entre les différentes interfaces réseau</p>
-              </div>
-              <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-server"/></svg></div>
-                <h3 class="achievement-title">Segmentation VLAN</h3>
-                <p class="achievement-description">Création et gestion de VLANs pour isoler les différents réseaux (LAN, DMZ, IoT, Management)</p>
+                <h3 class="achievement-title">Routage inter-VLAN</h3>
+                <p class="achievement-description">Sous-interfaces VLANs côté LAN (110/120/130/140/150) avec passerelles dédiées et routage géré par OPNsense</p>
               </div>
               <div class="achievement-card">
-                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-alert-triangle"/></svg></div>
-                <h3 class="achievement-title">IDS/IPS Suricata</h3>
-                <p class="achievement-description">Système de détection et prévention d'intrusions avec règles Emerging Threats pour identifier les menaces en temps réel</p>
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-shield"/></svg></div>
+                <h3 class="achievement-title">Filtrage par règles</h3>
+                <p class="achievement-description">Politique pare-feu par VLAN : Admin, Utilisateurs et WiFi autorisés au WAN, Invité isolé du LAN, DMZ vers LAN bloqué</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-lock"/></svg></div>
-                <h3 class="achievement-title">VPN WireGuard</h3>
-                <p class="achievement-description">Tunnel VPN sécurisé pour l'accès distant au réseau local via le protocole WireGuard haute performance</p>
-              </div>
-              <div class="achievement-card">
-                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
-                <h3 class="achievement-title">Supervision réseau</h3>
-                <p class="achievement-description">Tableaux de bord de monitoring avec graphiques de trafic, états des interfaces et logs de sécurité en temps réel</p>
+                <h3 class="achievement-title">Isolation VLAN invité</h3>
+                <p class="achievement-description">VLAN 140 cantonné à l'accès Internet — aucun flux autorisé vers le LAN interne, vérifié par tests ping bloqués</p>
               </div>
               <div class="achievement-card">
                 <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-globe"/></svg></div>
-                <h3 class="achievement-title">Proxy DNS</h3>
-                <p class="achievement-description">Résolution DNS locale avec blocage de publicités et de domaines malveillants via Unbound DNS</p>
+                <h3 class="achievement-title">NAT sortant</h3>
+                <p class="achievement-description">Masquerading appliqué à tous les VLANs internes pour partager l'accès Internet du WAN obtenu via DHCP école</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-activity"/></svg></div>
+                <h3 class="achievement-title">Redirection de port DMZ</h3>
+                <p class="achievement-description">Port forwarding 80/443 du WAN vers le serveur web hébergé en DMZ (10.20.120.10) pour exposer le service à l'extérieur</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-monitor"/></svg></div>
+                <h3 class="achievement-title">Interface d'administration</h3>
+                <p class="achievement-description">Accès web sécurisé depuis le VLAN Admin (http://10.20.110.1) — gestion centralisée du pare-feu via navigateur</p>
               </div>
             </div>
           </div>
@@ -130,14 +155,25 @@
           <div class="content-section">
             <h2 class="section-title">Réalisations techniques</h2>
             <ul class="challenges-list">
-              <li>Installation d'OPNsense sur machine dédiée avec configuration initiale des interfaces WAN/LAN</li>
-              <li>Création de VLANs (LAN principal, DMZ, IoT, Management) avec trunk 802.1Q</li>
-              <li>Rédaction de règles de pare-feu par interface avec politique de refus par défaut</li>
-              <li>Configuration du NAT (masquerading) et des redirections de ports</li>
-              <li>Déploiement de Suricata en mode IPS avec règles Emerging Threats mises à jour automatiquement</li>
-              <li>Mise en place d'un serveur VPN WireGuard avec gestion des certificats clients</li>
-              <li>Configuration d'Unbound DNS avec listes de blocage pour la sécurité DNS</li>
-              <li>Paramétrage des alertes et de la journalisation centralisée</li>
+              <li>Installation et configuration initiale d'OPNsense en VM sur Proxmox VE</li>
+              <li>Configuration de l'interface WAN en DHCP sur le réseau école</li>
+              <li>Création des cinq sous-interfaces VLANs côté LAN avec tagging 802.1Q</li>
+              <li>Définition du plan d'adressage 10.20.X.0/24 et passerelles par VLAN</li>
+              <li>Rédaction des règles de filtrage inter-VLAN avec politique de refus par défaut</li>
+              <li>Configuration du NAT sortant (masquerading) pour tous les VLANs internes</li>
+              <li>Mise en place d'une redirection de port WAN → DMZ pour le serveur web (80/443)</li>
+              <li>Configuration du trunk 802.1Q côté switches Cisco pour propager les VLANs</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2 class="section-title">Tests de validation</h2>
+            <ul class="challenges-list">
+              <li>Test d'accès Internet depuis chaque VLAN (110, 130, 140, 150)</li>
+              <li>Vérification du routage inter-VLAN par ping entre zones autorisées</li>
+              <li>Vérification de l'isolation du VLAN 140 invité (ping LAN bloqué)</li>
+              <li>Test d'accès au serveur web DMZ depuis le WAN via la redirection de port</li>
+              <li>Validation de l'isolation DMZ → LAN (flux bloqué)</li>
             </ul>
           </div>
 
@@ -146,39 +182,37 @@
             <div class="gallery-grid">
               <div class="skill-card">
                 <h4>Administration pare-feu</h4>
-                <p>Configuration de règles de filtrage, NAT, et politiques de sécurité réseau</p>
+                <p>Configuration des règles de filtrage, NAT et politiques de sécurité réseau sur OPNsense</p>
               </div>
               <div class="skill-card">
                 <h4>Segmentation réseau</h4>
-                <p>Conception et déploiement d'architectures VLAN pour l'isolation des flux</p>
+                <p>Conception et déploiement d'une architecture VLAN multi-zones avec routage centralisé</p>
               </div>
               <div class="skill-card">
-                <h4>Cybersécurité applicative</h4>
-                <p>Mise en place d'IDS/IPS et analyse des alertes de sécurité</p>
+                <h4>Routage inter-VLAN</h4>
+                <p>Mise en œuvre des passerelles VLANs, du trunking 802.1Q et de la propagation côté switches</p>
               </div>
               <div class="skill-card">
-                <h4>VPN & accès distant</h4>
-                <p>Déploiement et gestion de tunnels VPN WireGuard sécurisés</p>
+                <h4>Isolation de zones</h4>
+                <p>Mise en place d'un VLAN invité étanche au LAN et d'une DMZ exposée uniquement au WAN</p>
               </div>
               <div class="skill-card">
-                <h4>Supervision réseau</h4>
-                <p>Monitoring des interfaces, analyse de trafic et gestion des logs</p>
+                <h4>NAT et redirection de ports</h4>
+                <p>Configuration du masquerading et des règles de port forwarding pour les services exposés</p>
               </div>
               <div class="skill-card">
-                <h4>FreeBSD / OPNsense</h4>
-                <p>Administration d'un système FreeBSD via interface web et CLI</p>
+                <h4>Documentation réseau</h4>
+                <p>Production du plan d'adressage, du schéma logique et des règles de filtrage documentées</p>
               </div>
             </div>
           </div>
 
           <div class="content-section">
-            <h2 class="section-title">Défis relevés</h2>
+            <h2 class="section-title">Compétences BTS travaillées</h2>
             <ul class="challenges-list">
-              <li>Compréhension de l'ordre d'évaluation des règles de pare-feu (stateful vs stateless)</li>
-              <li>Configuration correcte du trunking VLAN entre OPNsense et les switches managés</li>
-              <li>Tuning de Suricata pour réduire les faux positifs sans manquer les vraies menaces</li>
-              <li>Résolution des problèmes d'asymétrie de routage affectant les connexions VPN</li>
-              <li>Gestion des règles inter-VLANs pour autoriser uniquement les flux nécessaires</li>
+              <li>Concevoir une solution d'infrastructure réseau</li>
+              <li>Installer, tester et déployer une solution d'infrastructure réseau</li>
+              <li>Exploiter, dépanner et superviser une solution d'infrastructure réseau</li>
             </ul>
           </div>
 
@@ -186,16 +220,16 @@
             <h2 class="section-title">État d'avancement</h2>
             <div class="results-grid">
               <div class="result-item">
-                <span class="result-number">4</span>
+                <span class="result-number">5</span>
                 <span class="result-label">VLANs configurés</span>
               </div>
               <div class="result-item">
-                <span class="result-number">IPS</span>
-                <span class="result-label">Suricata actif</span>
+                <span class="result-number">NAT</span>
+                <span class="result-label">Sortant opérationnel</span>
               </div>
               <div class="result-item">
-                <span class="result-number">VPN</span>
-                <span class="result-label">WireGuard opérationnel</span>
+                <span class="result-number">DMZ</span>
+                <span class="result-label">Exposée via NAT</span>
               </div>
             </div>
           </div>
@@ -207,19 +241,27 @@
             <div class="sidebar-info">
               <div class="info-item">
                 <span class="info-label">Type</span>
-                <span class="info-value">Projet SISR – BTS SIO</span>
+                <span class="info-value">Réalisation pro E6 — BTS SIO SISR</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Contexte</span>
-                <span class="info-value">Formation + Home Lab</span>
+                <span class="info-label">Organisation</span>
+                <span class="info-value">M2L (cadre référentiel BTS)</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Lieu</span>
+                <span class="info-value">IPSSI Marne-La-Vallée</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Modalité</span>
+                <span class="info-value">Seul</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Période</span>
+                <span class="info-value">01/09/2025 - 31/08/2026</span>
               </div>
               <div class="info-item">
                 <span class="info-label">Statut</span>
                 <span class="info-value">En cours</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Période</span>
-                <span class="info-value">2025 – En cours</span>
               </div>
             </div>
           </div>
@@ -228,14 +270,35 @@
             <h3 class="sidebar-title">Technologies</h3>
             <div class="tech-list">
               <span class="tech-item">OPNsense</span>
-              <span class="tech-item">FreeBSD</span>
+              <span class="tech-item">Proxmox VE</span>
+              <span class="tech-item">Cisco Catalyst (L3)</span>
+              <span class="tech-item">Switch L2 Cisco</span>
               <span class="tech-item">VLAN 802.1Q</span>
-              <span class="tech-item">Suricata IDS/IPS</span>
-              <span class="tech-item">WireGuard</span>
-              <span class="tech-item">Unbound DNS</span>
               <span class="tech-item">NAT / PAT</span>
-              <span class="tech-item">pfctl</span>
-              <span class="tech-item">Emerging Threats</span>
+              <span class="tech-item">DHCP</span>
+              <span class="tech-item">DMZ</span>
+              <span class="tech-item">FreeBSD</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Plan d'adressage</h3>
+            <div class="sidebar-info">
+              <div class="info-item">
+                <span class="info-label">VLAN 110 Admin — 10.20.110.0/24</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VLAN 120 DMZ — 10.20.120.0/24</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VLAN 130 WiFi — 10.20.130.0/24</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VLAN 140 Invité — 10.20.140.0/24</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">VLAN 150 Utilisateurs — 10.20.150.0/24</span>
+              </div>
             </div>
           </div>
 
@@ -243,40 +306,16 @@
             <h3 class="sidebar-title">Compétences SISR</h3>
             <div class="sidebar-info">
               <div class="info-item">
-                <span class="info-label">Sécurisation des accès</span>
+                <span class="info-label">Conception d'infrastructure</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Architecture réseau</span>
+                <span class="info-label">Sécurisation des accès</span>
               </div>
               <div class="info-item">
                 <span class="info-label">Administration firewall</span>
               </div>
               <div class="info-item">
-                <span class="info-label">VPN & Tunneling</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">IDS/IPS</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="sidebar-section">
-            <h3 class="sidebar-title">Avancement</h3>
-            <div class="sidebar-info">
-              <div class="info-item">
-                <span class="info-label">Pare-feu de base – Opérationnel</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">VLANs – Opérationnel</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Suricata IPS – En cours</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">VPN WireGuard – En cours</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">HAProxy – À venir</span>
+                <span class="info-label">Segmentation VLAN</span>
               </div>
             </div>
           </div>
@@ -322,7 +361,7 @@
           <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
         </a>
       </div>
-      <p class="footer-text">© 2025–2026. Tous droits réservés.</p>
+      <p class="footer-text">© 2025 - 2026. Tous droits réservés.</p>
     </div>
   </footer>
 
