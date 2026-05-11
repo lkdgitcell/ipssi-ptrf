@@ -2298,24 +2298,6 @@
     }
   }
 
-  /* ===== BLOCK: PDF PREVIEW (iframe embed) ===== */
-  .pdf-preview {
-    width: 100%;
-    margin: 0 0 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--paper);
-    box-shadow: var(--shadow-sm);
-
-    iframe {
-      display: block;
-      width: 100%;
-      height: clamp(600px, 85vh, 900px);
-      border: 0;
-    }
-  }
-
   /* ===== BLOCK: CONTACT ===== */
   .contact-intro {
     color: var(--muted);
