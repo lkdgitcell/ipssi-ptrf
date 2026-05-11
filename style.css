@@ -185,9 +185,9 @@
     font-family: var(--font-body);
     background-color: var(--paper-secondary);
     background-image:
-      linear-gradient(color-mix(in oklch, var(--border) 32%, transparent) 1px, transparent 1px),
-      linear-gradient(90deg, color-mix(in oklch, var(--border) 32%, transparent) 1px, transparent 1px);
-    background-size: 64px 64px;
+      linear-gradient(color-mix(in oklch, var(--border) 50%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklch, var(--border) 50%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
     color: var(--muted);
     min-height: 100vh;
     overflow-x: hidden;
