@@ -908,3 +908,21 @@
   .toc-list { display: none; } /* TOC masqué sur mobile — sidebar passe en dessous */
   .nav-project-counter { display: none; }
 }
+
+/* ===== MOBILE: compact hero meta-tags ===== */
+@media (max-width: 540px) {
+  .project-meta {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .hero-project .project-tag,
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.7rem;
+  }
+  .project-date {
+    flex-basis: 100%;
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+  }
+}
