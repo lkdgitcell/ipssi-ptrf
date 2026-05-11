@@ -726,17 +726,7 @@
   scroll-margin-top: 6rem;
 }
 
-.section-title::before {
-  content: counter(project-section, decimal-leading-zero);
-  font-family: var(--font-mono);
-  font-size: 0.62em;
-  font-weight: 700;
-  color: var(--accent);
-  opacity: 0.45;
-  margin-right: 0.55em;
-  letter-spacing: 0.08em;
-  vertical-align: 0.18em;
-}
+/* Section counter prefix removed for cleaner project page reading */
 
 /* ===== ACHIEVEMENT CARDS — NUMÉRO OVERLAY ===== */
 .achievements-grid {

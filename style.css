@@ -185,9 +185,9 @@
     font-family: var(--font-body);
     background-color: var(--paper-secondary);
     background-image:
-      linear-gradient(var(--border) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 48px 48px;
+      linear-gradient(color-mix(in oklch, var(--border) 32%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklch, var(--border) 32%, transparent) 1px, transparent 1px);
+    background-size: 64px 64px;
     color: var(--muted);
     min-height: 100vh;
     overflow-x: hidden;
@@ -915,17 +915,9 @@
   @scope (.about-content) {
     .about-content {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 4rem;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
       align-items: start;
-      container-type: inline-size;
-      container-name: about-layout;
-
-      @container about-layout (width < 500px) {
-        & { grid-template-columns: 1fr; gap: 2rem; }
-        .about-stats { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-        .stat-item { min-width: 120px; }
-      }
     }
 
     .about-text {
@@ -938,10 +930,9 @@
     }
 
     .about-stats {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      min-width: 160px;
     }
 
     .stat-item {
@@ -2722,9 +2713,8 @@
     .section { padding: 3.5rem 1.5rem; margin: 1rem 0.75rem; border-radius: var(--radius-lg); }
     .footer { margin: 0 0.75rem 1rem; border-radius: var(--radius-lg); }
     .hero-section { padding: 4rem 1.5rem 2.5rem; margin: 0; }
-    .about-content { grid-template-columns: 1fr; gap: 2rem; }
-    .about-stats { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .stat-item { min-width: 120px; }
+    .about-content { gap: 2rem; }
+    .stat-item { padding: 1rem 0.75rem; }
     .hero-word--indent  { padding-left: 1rem; }
     .hero-word--indent2 { padding-left: 2rem; }
     .doc-download-card {
@@ -2744,6 +2734,7 @@
   }
 
   @media (max-width: 540px) {
+    .about-stats { grid-template-columns: 1fr; }
     .hero-section { padding: 3.5rem 1rem 2rem; }
     .section { padding: 3rem 1rem; }
     .tl3 { max-width: 100%; }
