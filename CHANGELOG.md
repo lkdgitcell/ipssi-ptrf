@@ -1,5 +1,60 @@
 # 📋 Journal des modifications - Portfolio
 
+## ✅ Version 1.2.0 - 11 Mai 2026
+
+### 🎨 Refactoring CSS — État de l'art 2026
+
+- Architecture en `@layer` (settings, reset, base, layout, components, utilities)
+- Tokens couleur en `oklch()` typés via `@property` (animables natifs)
+- Mode clair/sombre natif via `light-dark()` + bascule manuelle `data-theme`
+- Variables dérivées par `color-mix()` pour ombres, bordures et états
+- Typographie fluide avec `clamp()`, polices Fraunces / Spectral / JetBrains Mono
+- CSS nesting natif dans `projets.css`
+- Système de bannières multi-contextes : `card-banner`, `hero-logo-banner`, `nav-project-banner` (un slug par projet)
+
+### 🛡️ Nouvelle section Veille technologique
+
+- Onglets accessibles `role="tablist"` : Thèmes & Compétences / Sources / Démarche
+- Flux RSS dynamique CERT-FR · ANSSI · CNIL (catégorisation automatique des articles)
+- Intégration des dernières fuites depuis Bonjour la Fuite (parsing HTML via proxy CORS)
+- Cartes thèmes orientées SISR (fuites & vie privée, chiffrement, RGPD/NIS2)
+
+### 🆕 Nouvelles pages projets
+
+- `apyka.html` — alternance APYKA (Technicien Support Niv. 1 & 2, depuis 09/2025)
+- `opnsense.html` — pare-feu M2L 5 VLANs (réalisation pro BTS E6)
+- `proxmox-backup.html` — sauvegarde centralisée M2L avec PBS 4.1.0 + NAS Synology (réalisation pro BTS E6 en équipe)
+- `truenas.html` — serveur auto-hébergé (Jellyfin, Nextcloud, NPM, Dockge)
+- `infra-perso.html` — home lab (VLANs, services auto-hébergés, évolutions prévues)
+
+### 🎯 Mises à jour de contenu
+
+- **OPNsense / Proxmox Backup** réécrits avec les spécifications réelles M2L (plan d'adressage 10.20.X / 10.74.X, VLANs 110-150, PBS 4.1.0, VE 9.1, NAS Synology DS920+)
+- **Stage SCC** : période précise 28/04/2025 - 25/06/2025, durée 6 semaines, missions alignées sur le tableau de synthèse (DELL/Cisco, firmware NX-OS, doc technique, suivi projets)
+- **bibli.html** : période étendue 2024 - 2025 (BTS 1re année)
+- **CV** : libellé mis à jour 2026
+- **Footer** : copyright `© 2025 - 2026` harmonisé sur toutes les pages
+- **Tableau de synthèse E5** mis à jour
+
+### ✨ Cohérence UX
+
+- Logo LKD ajouté dans le header de toutes les pages projet (8 pages) + 404 + merci (floating)
+- Format des séparateurs de dates harmonisé en `hyphen-spaces` (`YYYY - YYYY`)
+- Suppression des incohérences entre cartes index et fiches projets
+
+### 🔧 JavaScript modulaire (11 fichiers `defer`)
+
+- `theme.js` — bascule clair/sombre avec persistance localStorage
+- `main.js` — burger, pill indicator, scroll-spy, compteurs animés, ripple
+- `contact.js` — formulaire EmailJS (à configurer)
+- `projects.js` — navigation clavier des cartes `role="link"`
+- `project-enhancements.js` — lightbox `<dialog>` natif
+- `hero.js`, `transitions.js`, `enhancements.js` — micro-interactions
+- `icons-loader.js` — sprite SVG injecté dynamiquement
+- `rss-feed.js` — agrégateur veille RSS avec catégorisation
+- `bonjour-la-fuite.js` — scraping des fuites françaises avec fallback de proxys
+
+---
 ## ✅ Version 1.1.0 - 25 Janvier 2025
 
 ### 🎯 Améliorations majeures implémentées
