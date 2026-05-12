@@ -443,6 +443,19 @@
     counter-reset: sec;
   }
 
+  .sections-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    max-width: 1200px;
+    margin: 0.75rem auto;
+
+    > .section { margin: 0; max-width: none; }
+  }
+  @media (max-width: 900px) {
+    .sections-pair { grid-template-columns: 1fr; }
+  }
+
   .section {
     max-width: 960px;
     margin: 0.75rem auto;
