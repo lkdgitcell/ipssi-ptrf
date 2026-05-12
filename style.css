@@ -114,7 +114,7 @@
 
     /* ── Catégories RSS ── */
     --rss-alerte-bg:          oklch(95% 0.05 25); --rss-alerte-text:          oklch(45% 0.22 25);
-    --rss-vulnerabilite-bg:   oklch(97% 0.05 85); --rss-vulnerabilite-text:   oklch(52% 0.18 72);
+    --rss-vulnerabilite-bg:   oklch(97% 0.05 85); --rss-vulnerabilite-text:   oklch(52% 0.18 85);
     --rss-menace-bg:          oklch(95% 0.05 350); --rss-menace-text:          oklch(48% 0.20 350);
     --rss-recommandations-bg: oklch(95% 0.04 250); --rss-recommandations-text: oklch(40% 0.16 250);
     --rss-reglementation-bg:  oklch(95% 0.04 270); --rss-reglementation-text:  oklch(42% 0.15 270);
