@@ -1064,7 +1064,7 @@
       }
       &--bac {
         background: color-mix(in oklch, var(--color-success) 8%, transparent);
-        color: oklch(38% 0.15 145);
+        color: light-dark(oklch(38% 0.15 145), oklch(72% 0.16 145));
         border: 1px solid color-mix(in oklch, var(--color-success) 20%, transparent);
       }
     }
