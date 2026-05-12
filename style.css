@@ -1109,6 +1109,8 @@
     background: transparent;
     cursor: pointer;
     text-decoration: none;
+
+    &[hidden] { display: none; }
     position: relative;
     contain: layout style paint;
     transition:
