@@ -1308,6 +1308,8 @@
     transform: scale(1.08);
   }
 
+  .cards-grid .card[hidden] { display: none; }
+
   /* Certification card variant */
   .certification-card {
     grid-template-columns: 1fr;
