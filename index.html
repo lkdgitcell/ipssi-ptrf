@@ -22,14 +22,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="js/theme.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-  <script type="text/javascript">
-    window.addEventListener('DOMContentLoaded', function() {
-      if (typeof emailjs !== 'undefined') {
-        emailjs.init({ publicKey: "_umD9Ya22-Vr3b-73" });
-      }
-    });
-  </script>
 </head>
 <body>
   <a href="#accueil" class="skip-to-content">Aller au contenu principal</a>
@@ -62,7 +54,6 @@
           <a href="#veille" class="nav-link">Veille</a>
           <a href="#synthese" class="nav-link">Synthèse</a>
           <a href="#cv" class="nav-link">CV</a>
-          <a href="#contact" class="nav-link">Contact</a>
         </div>
       </nav>
     </div>
@@ -744,44 +735,6 @@
       </div>
     </section>
 
-    <section id="contact" class="section fade-in" aria-label="Contact">
-      <h2 class="subtitle with-bar">Contact</h2>
-      <div class="section-bar"></div>
-      <p class="contact-intro">Vous avez un projet, une question ou souhaitez discuter d'une opportunité ? N'hésitez pas à me contacter !</p>
-      <form class="form-contact" id="contactForm">
-        <div class="form-field">
-          <label for="nom" class="form-label">Nom complet</label>
-          <input id="nom" name="from_name" type="text" class="form-input" placeholder="Nom complet" required autocomplete="name">
-        </div>
-        <div class="form-field">
-          <label for="email" class="form-label">Adresse e-mail</label>
-          <input id="email" name="from_email" type="email" class="form-input" placeholder="E-mail" required autocomplete="email">
-        </div>
-        <div class="form-field">
-          <label for="sujet" class="form-label">Sujet</label>
-          <input id="sujet" name="subject" type="text" class="form-input" placeholder="Sujet" required>
-        </div>
-        <div class="form-field">
-          <label for="message" class="form-label">Message</label>
-          <textarea id="message" name="message" class="form-input" placeholder="Votre message" rows="5" required></textarea>
-        </div>
-        <button id="sendBtn" type="submit" class="send-btn button-cta ripple">
-          <span>Envoyer le message</span>
-        </button>
-        <div class="form-message" id="formMessage" role="alert" aria-live="polite" hidden></div>
-      </form>
-      <div class="contact-links">
-        <a href="mailto:loickoehly@gmail.com" class="contact-link" title="Envoyer un E-mail" aria-label="Envoyer un E-mail">
-          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-mail"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/loic-k-41892a341/" class="contact-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-linkedin"/></svg>
-        </a>
-        <a href="https://github.com/lkdgitcell" class="contact-link" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-github"/></svg>
-        </a>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -797,7 +750,6 @@
         <a href="#veille" class="footer-link">Veille</a>
         <a href="#synthese" class="footer-link">Synthèse</a>
         <a href="#cv" class="footer-link">CV</a>
-        <a href="#contact" class="footer-link">Contact</a>
       </div>
       <div class="footer-social">
         <a href="https://github.com/lkdgitcell" target="_blank" class="footer-icon" aria-label="GitHub">
@@ -816,7 +768,6 @@
 
   <script src="js/icons-loader.js"></script>
   <script src="js/main.js" defer></script>
-  <script src="js/contact.js" defer></script>
   <script src="js/enhancements.js" defer></script>
   <script src="js/rss-feed.js" defer></script>
   <script src="js/bonjour-la-fuite.js" defer></script>
