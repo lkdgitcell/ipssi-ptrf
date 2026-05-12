@@ -12,7 +12,9 @@
     function applyFilter(value) {
       cards.forEach(function (card) {
         const match = value === 'all' || card.dataset.epreuve === value;
-        card.hidden = !match;
+        card.style.display = match ? '' : 'none';
+        if (match) card.removeAttribute('aria-hidden');
+        else card.setAttribute('aria-hidden', 'true');
       });
     }
 
